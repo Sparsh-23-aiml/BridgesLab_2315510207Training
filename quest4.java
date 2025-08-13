@@ -1,13 +1,18 @@
-package Programing_elements.Level_1;
+package Programing_elements.Level_2;
+
+import java.util.Scanner;
 
 public class quest4 {
     public static void main(String[] args) {
-        int costPrice = 129;
-        int sellingPrice = 191;
-        int profit = sellingPrice - costPrice;
-        double profitPercentage = (double) profit / costPrice * 100;
+        Scanner input = new Scanner(System.in);
         
-        System.out.println("The Cost Price is INR " + costPrice + " and Selling Price is INR " + sellingPrice + 
-                          "\nThe Profit is INR " + profit + " and the Profit Percentage is " + profitPercentage);
+        System.out.print("Enter distance in feet: ");
+        double distanceInFeet = input.nextDouble();
+        
+        double distanceInYards = distanceInFeet / 3;
+        double distanceInMiles = distanceInYards / 1760;
+        
+        System.out.println("The distance in yards is " + distanceInYards + " while the distance in miles is " + distanceInMiles);
+        input.close();
     }
 }

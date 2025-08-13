@@ -1,11 +1,20 @@
-package Programing_elements.Level_1;
+package Programing_elements.Level_2;
+
+import java.util.Scanner;
 
 public class quest5 {
     public static void main(String[] args) {
-        int totalPens = 14;
-        int students = 3;
-        int pensPerStudent = totalPens / students;
-        int remainingPens = totalPens % students;
-        System.out.println("The Pen Per Student is " + pensPerStudent + " and the remaining pen not distributed is " + remainingPens);
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Enter unit price: ");
+        double unitPrice = input.nextDouble();
+        
+        System.out.print("Enter quantity: ");
+        int quantity = input.nextInt();
+        
+        double totalPrice = unitPrice * quantity;
+        
+        System.out.println("The total purchase price is INR " + totalPrice + " if the quantity " + quantity + " and unit price is INR " + unitPrice);
+        input.close();
     }
 }
