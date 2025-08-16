@@ -1,4 +1,4 @@
-package ControlFlow_Practices.Level2;
+package ControlFlow_Practices.Level3;
 
 import java.util.Scanner;
 
@@ -6,19 +6,25 @@ public class quest1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        System.out.print("Enter a natural number: ");
-        int number = input.nextInt();
+        System.out.print("Enter a year: ");
+        int year = input.nextInt();
         
-        if (number > 0) {
-            for (int i = 1; i <= number; i++) {
-                if (i % 2 == 0) {
-                    System.out.println(i + " is even number");
-                } else {
-                    System.out.println(i + " is odd number");
-                }
-            }
+        if (year < 1582) {
+            System.out.println("Year must be >= 1582 for Gregorian calendar");
         } else {
-            System.out.println("Please enter a natural number");
+            if (year % 4 == 0) {
+                if (year % 100 == 0) {
+                    if (year % 400 == 0) {
+                        System.out.println(year + " is a Leap Year");
+                    } else {
+                        System.out.println(year + " is not a Leap Year");
+                    }
+                } else {
+                    System.out.println(year + " is a Leap Year");
+                }
+            } else {
+                System.out.println(year + " is not a Leap Year");
+            }
         }
         input.close();
     }

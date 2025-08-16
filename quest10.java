@@ -1,4 +1,4 @@
-package ControlFlow_Practices.Level2;
+package ControlFlow_Practices.Level3;
 
 import java.util.Scanner;
 
@@ -6,21 +6,35 @@ public class quest10 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        System.out.print("Enter a positive integer: ");
-        int number = input.nextInt();
+        System.out.print("Enter first number: ");
+        double first = input.nextDouble();
         
-        int greatestFactor = 1;
-        int counter = number - 1;
+        System.out.print("Enter second number: ");
+        double second = input.nextDouble();
         
-        while (counter >= 1) {
-            if (number % counter == 0) {
-                greatestFactor = counter;
+        System.out.print("Enter operator (+, -, *, /): ");
+        String op = input.next();
+        
+        switch (op) {
+            case "+":
+                System.out.println("Result: " + (first + second));
                 break;
-            }
-            counter--;
+            case "-":
+                System.out.println("Result: " + (first - second));
+                break;
+            case "*":
+                System.out.println("Result: " + (first * second));
+                break;
+            case "/":
+                if (second != 0) {
+                    System.out.println("Result: " + (first / second));
+                } else {
+                    System.out.println("Error: Division by zero");
+                }
+                break;
+            default:
+                System.out.println("Invalid Operator");
         }
-        
-        System.out.println("Greatest factor of " + number + " (beside itself) is: " + greatestFactor);
         input.close();
     }
 }

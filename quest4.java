@@ -1,4 +1,4 @@
-package ControlFlow_Practices.Level2;
+package ControlFlow_Practices.Level3;
 
 import java.util.Scanner;
 
@@ -6,23 +6,26 @@ public class quest4 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        System.out.print("Enter a positive integer: ");
+        System.out.print("Enter a number: ");
         int number = input.nextInt();
         
-        if (number > 0) {
-            for (int i = 1; i <= number; i++) {
-                if (i % 3 == 0 && i % 5 == 0) {
-                    System.out.println("FizzBuzz");
-                } else if (i % 3 == 0) {
-                    System.out.println("Fizz");
-                } else if (i % 5 == 0) {
-                    System.out.println("Buzz");
-                } else {
-                    System.out.println(i);
+        boolean isPrime = true;
+        
+        if (number <= 1) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    isPrime = false;
+                    break;
                 }
             }
+        }
+        
+        if (isPrime) {
+            System.out.println(number + " is a Prime Number");
         } else {
-            System.out.println("Please enter a positive integer");
+            System.out.println(number + " is not a Prime Number");
         }
         input.close();
     }

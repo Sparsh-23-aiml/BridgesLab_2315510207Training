@@ -1,4 +1,4 @@
-package ControlFlow_Practices.Level2;
+package ControlFlow_Practices.Level3;
 
 import java.util.Scanner;
 
@@ -6,19 +6,22 @@ public class quest9 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        System.out.print("Enter a positive integer: ");
+        System.out.print("Enter a number: ");
         int number = input.nextInt();
         
-        int greatestFactor = 1;
+        int sum = 0;
         
-        for (int i = number - 1; i >= 1; i--) {
+        for (int i = 1; i < number; i++) {
             if (number % i == 0) {
-                greatestFactor = i;
-                break;
+                sum += i;
             }
         }
         
-        System.out.println("Greatest factor of " + number + " (beside itself) is: " + greatestFactor);
+        if (sum > number) {
+            System.out.println(number + " is an Abundant Number");
+        } else {
+            System.out.println(number + " is not an Abundant Number");
+        }
         input.close();
     }
 }
