@@ -1,4 +1,4 @@
-package ControlFlow_Practices.Level1;
+package ControlFlow_Practices.Level2;
 
 import java.util.Scanner;
 
@@ -6,24 +6,22 @@ public class quest12 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        System.out.print("Enter a natural number: ");
+        System.out.print("Enter number: ");
         int number = input.nextInt();
         
-        if (number > 0) {
-            int formulaSum = number * (number + 1) / 2;
+        System.out.print("Enter power: ");
+        int power = input.nextInt();
+        
+        if (number > 0 && power >= 0) {
+            int result = 1;
             
-            int loopSum = 0;
-            int i = 1;
-            while (i <= number) {
-                loopSum += i;
-                i++;
+            for (int i = 1; i <= power; i++) {
+                result *= number;
             }
             
-            System.out.println("Sum using formula: " + formulaSum);
-            System.out.println("Sum using while loop: " + loopSum);
-            System.out.println("Both results are equal: " + (formulaSum == loopSum));
+            System.out.println(number + " raised to power " + power + " is: " + result);
         } else {
-            System.out.println("The number " + number + " is not a natural number");
+            System.out.println("Please enter positive integers");
         }
         input.close();
     }

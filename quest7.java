@@ -1,4 +1,4 @@
-package ControlFlow_Practices.Level1;
+package ControlFlow_Practices.Level2;
 
 import java.util.Scanner;
 
@@ -6,16 +6,18 @@ public class quest7 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        System.out.print("Enter month: ");
-        int month = input.nextInt();
+        System.out.print("Enter a positive integer: ");
+        int number = input.nextInt();
         
-        System.out.print("Enter day: ");
-        int day = input.nextInt();
-        
-        if ((month == 3 && day >= 20) || (month == 4) || (month == 5) || (month == 6 && day <= 20)) {
-            System.out.println("Its a Spring Season");
+        if (number > 0) {
+            System.out.println("Factors of " + number + " are:");
+            for (int i = 1; i <= number; i++) {
+                if (number % i == 0) {
+                    System.out.println(i);
+                }
+            }
         } else {
-            System.out.println("Not a Spring Season");
+            System.out.println("Please enter a positive integer");
         }
         input.close();
     }

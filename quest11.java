@@ -1,4 +1,4 @@
-package ControlFlow_Practices.Level1;
+package ControlFlow_Practices.Level2;
 
 import java.util.Scanner;
 
@@ -6,20 +6,17 @@ public class quest11 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        double total = 0.0;
+        System.out.print("Enter a positive integer less than 100: ");
+        int number = input.nextInt();
         
-        while (true) {
-            System.out.print("Enter a number: ");
-            double number = input.nextDouble();
-            
-            if (number <= 0) {
-                break;
+        if (number > 0 && number < 100) {
+            System.out.println("Multiples of " + number + " below 100 are:");
+            for (int i = number; i < 100; i += number) {
+                System.out.println(i);
             }
-            
-            total += number;
+        } else {
+            System.out.println("Please enter a positive integer less than 100");
         }
-        
-        System.out.println("Total sum: " + total);
         input.close();
     }
 }

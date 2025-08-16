@@ -1,4 +1,4 @@
-package ControlFlow_Practices.Level1;
+package ControlFlow_Practices.Level2;
 
 import java.util.Scanner;
 
@@ -6,18 +6,18 @@ public class quest2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        System.out.print("Enter first number: ");
-        int number1 = input.nextInt();
+        System.out.print("Enter salary: ");
+        double salary = input.nextDouble();
         
-        System.out.print("Enter second number: ");
-        int number2 = input.nextInt();
+        System.out.print("Enter years of service: ");
+        int yearsOfService = input.nextInt();
         
-        System.out.print("Enter third number: ");
-        int number3 = input.nextInt();
-        
-        boolean isFirstSmallest = (number1 < number2 && number1 < number3);
-        
-        System.out.println("Is the first number the smallest? " + isFirstSmallest);
+        if (yearsOfService > 5) {
+            double bonus = salary * 0.05;
+            System.out.println("Bonus amount: " + bonus);
+        } else {
+            System.out.println("No bonus applicable");
+        }
         input.close();
     }
 }
